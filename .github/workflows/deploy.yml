@@ -20,7 +20,7 @@ jobs:
 
       - name: Deploy to EC2
         run: |
-          ssh -o StrictHostKeyChecking=no root@http://3.26.151.229/ << 'EOF'
+          ssh -o StrictHostKeyChecking=no root@3.26.151.229 << 'EOF'
           cd /usr/share/nginx/html/tugas-cicd;
           git pull origin main
           # Restart Nginx or any other service if needed
