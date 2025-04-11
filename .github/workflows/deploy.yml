@@ -22,7 +22,7 @@ jobs:
         run: |
           ssh -o StrictHostKeyChecking=no ec2-user@3.26.151.229 << 'EOF'
           cd /usr/share/nginx/html/tugas-cicd;
-          git pull origin main
+          sudo git pull origin main
           # Restart Nginx or any other service if needed
           sudo systemctl restart nginx
           EOF
