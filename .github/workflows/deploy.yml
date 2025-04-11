@@ -20,7 +20,7 @@ jobs:
 
       - name: Deploy to EC2
         run: |
-          ssh -o StrictHostKeyChecking=no ec2-user@http://3.26.151.229/ "
+          ssh -o StrictHostKeyChecking=no ec2-user@3.26.151.229/ "
             cd /usr/share/nginx/html/Pertemuan_6 &&
             git config --global --add safe.directory /usr/share/nginx/html/tugas-cicd &&
             sudo git pull origin main &&
