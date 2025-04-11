@@ -20,11 +20,9 @@ jobs:
 
       - name: Deploy to EC2
         run: |
-          ssh -o StrictHostKeyChecking=no ec2-user@3.26.151.229 << 'EOF'
-          cd /usr/share/nginx/html/tugas-cicd;
-          sudo git pull origin main
-          # Restart Nginx or any other service if needed
-          sudo systemctl restart nginx
-          EOF
-    env:
-      SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          ssh -o StrictHostKeyChecking=no ec2-user@http://3.26.151.229/ "
+            cd /usr/share/nginx/html/Pertemuan_6 &&
+            git config --global --add safe.directory /usr/share/nginx/html/tugas-cicd &&
+            sudo git pull origin main &&
+            sudo systemctl restart nginx
+          "
